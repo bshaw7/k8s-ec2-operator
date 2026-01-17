@@ -1,0 +1,16 @@
+# Ignore everything by default
+**
+
+# Un-ignore the directories we need
+!cmd/
+!api/
+!controllers/
+!internal/     # <--- ADD THIS LINE (This is where your controller code actually lives now)
+
+# Un-ignore Go source files anywhere
+!**/*.go
+**/*_test.go
+
+# Un-ignore Go module files
+!go.mod
+!go.sum

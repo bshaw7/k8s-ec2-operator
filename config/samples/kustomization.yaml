@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- ec2_v1alpha1_ec2instance.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

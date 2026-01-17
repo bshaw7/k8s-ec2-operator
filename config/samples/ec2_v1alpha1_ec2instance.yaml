@@ -1,0 +1,16 @@
+apiVersion: ec2.my.domain/v1alpha1
+kind: EC2Instance
+metadata:
+  labels:
+    app.kubernetes.io/name: ec2instance
+    app.kubernetes.io/instance: ec2instance-sample
+    app.kubernetes.io/part-of: k8s-ec2-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: ec2instance-sample
+spec:
+  ami: "ami-01ca13db604661046"
+  instanceType: "t2.micro"
+  subnetID: "subnet-0decda7397989fd68"
+  tags:
+    Name: "test-server"
+    Environment: "dev"
