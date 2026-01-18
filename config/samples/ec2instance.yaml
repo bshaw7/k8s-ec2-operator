@@ -1,0 +1,13 @@
+apiVersion: ec2.my.domain/v1alpha1
+kind: EC2Instance
+metadata:
+  name: my-demo-server
+spec:
+  ami: ami-000f8bf5646260932        # Change this to a valid AMI for your region
+  instanceType: "t3.micro"
+  subnetID: subnet-123456789 # Change this to your valid Subnet ID
+  # OPTIONAL FIELDS
+  tags:
+    Name: "my-demo-server"
+    Environment: "Production"
+    ManagedBy: "OpenShift Operator"
