@@ -29,8 +29,8 @@ Get the manifests and configuration files to your local machine (or bastion host
 
 
 ```bash
-git clone [https://github.com/bshaw7/k8s-ec2-operator.git](https://github.com/bshaw7/k8s-ec2-operator.git)
-cd k8s-ec2-operator
+$ git clone [https://github.com/bshaw7/k8s-ec2-operator.git](https://github.com/bshaw7/k8s-ec2-operator.git)
+$ cd k8s-ec2-operator
 
 ```
 
@@ -41,7 +41,7 @@ Install the CRDs (Custom Resource Definitions) and the Operator Deployment using
 Run this command from the project root:
 
 ```bash
-make deploy IMG=[docker.io/shawbikash521/k8s-ec2-operator:v1](https://docker.io/shawbikash521/k8s-ec2-operator:v1)
+$ oc apply -f config/samples/ec2_v1alpha1_ec2instance.yaml
 
 ```
 
@@ -91,19 +91,20 @@ oc get pods -n k8s-ec2-operator-system
 Create a YAML file named `ec2-instance.yaml` with your specific AWS details (AMI and Subnet ID).
 
 ```yaml
-apiVersion: [ec2.bshaw7.github.com/v1alpha1](https://ec2.bshaw7.github.com/v1alpha1)
+apiVersion: ec2.my.domain/v1alpha1
 kind: EC2Instance
 metadata:
-  name: my-test-server
+  name: my-demo-server
 spec:
-  # Replace with a valid AMI ID for ap-south-1 (e.g., Amazon Linux 2)
-  ami: ami-0e1d06225679bc1c5 
-  instanceType: t2.micro
-  # Replace with a valid Subnet ID from your AWS VPC in ap-south-1
-  subnetID: subnet-0123456789abcdef0 
+  ami: ami-0001234567        # Change this to a valid AMI for your region
+  instanceType: "t3.micro"   # instanfe type 
+  subnetID: subnet-123456789 # Change this to your valid Subnet ID
+  # OPTIONAL FIELDS
   tags:
-    Environment: "Dev"
-    ManagedBy: "OpenShift"
+    Name: "my-demo-server"
+    Environment: "Production"
+    ManagedBy: "OpenShift Operator"
+
 
 ```
 
@@ -139,6 +140,10 @@ oc delete -f ec2-instance.yaml
 
 ```
 
+```bash
+$ oc delete -f config/samples/ec2_v1alpha1_ec2instance.yaml
+```
+
 ---
 
 ## 🔧 Troubleshooting
@@ -150,14 +155,6 @@ oc logs -f deployment/k8s-ec2-operator-controller-manager -n k8s-ec2-operator-sy
 
 ```
 
-### Common Errors
-
-| Error Message | Cause & Fix |
-| --- | --- |
-| **Exec format error** | The image was built on a different architecture (e.g., Apple M1) than the cluster (Intel/AMD). Ensure you use the image built on RHEL/Linux. |
-| **AuthFailure / NoCredentialProviders** | The Operator cannot find AWS keys. Re-run **Step 3** to verify the Secret exists and is attached to the Deployment. |
-| **InvalidAMIID.NotFound** | The AMI ID in your YAML does not exist in the `ap-south-1` region. Find a valid AMI ID for Mumbai. |
-| **ImagePullBackOff** | The cluster cannot pull the image from the private registry `vm-234-63...`. Ensure the cluster has network access to that VM. |
 
 ```
 
