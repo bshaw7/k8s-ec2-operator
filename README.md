@@ -14,7 +14,7 @@ Before deploying this operator, ensure you have the following:
     You will need the **Access Key ID
     You will need the Secret Access Key
 4.  Network Access Your cluster nodes must be able to pull images from the internal registry:
-    `vm-234-63.vmware.gsslab.pnq2.redhat.com:8443`
+    `docker.io`
     (Note: If deploying to a cluster outside this network, push the image to a public registry like Docker Hub or Quay.io first).
 
 
@@ -41,7 +41,7 @@ Install the CRDs (Custom Resource Definitions) and the Operator Deployment using
 Run this command from the project root:
 
 ```bash
-make deploy IMG=[vm-234-63.vmware.gsslab.pnq2.redhat.com:8443/bshaw7/k8s-ec2-operator:v1](https://vm-234-63.vmware.gsslab.pnq2.redhat.com:8443/bshaw7/k8s-ec2-operator:v1)
+make deploy IMG=[docker.io/shawbikash521/k8s-ec2-operator:v1](https://docker.io/shawbikash521/k8s-ec2-operator:v1)
 
 ```
 
