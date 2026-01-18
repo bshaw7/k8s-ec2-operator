@@ -16,7 +16,7 @@ Before deploying this operator, ensure you have the following:
     * `vm-234-63.vmware.gsslab.pnq2.redhat.com:8443`
     * *(Note: If deploying to a cluster outside this network, push the image to a public registry like Docker Hub or Quay.io first).*
 
----
+
 
 ## 🚀 Deployment Guide
 
