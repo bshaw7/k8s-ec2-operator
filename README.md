@@ -29,7 +29,7 @@ Get the manifests and configuration files to your local machine (or bastion host
 
 
 ```bash
-$ git clone [https://github.com/bshaw7/k8s-ec2-operator.git](https://github.com/bshaw7/k8s-ec2-operator.git)
+$ git clone https://github.com/bshaw7/k8s-ec2-operator
 $ cd k8s-ec2-operator
 
 ```
