@@ -436,7 +436,7 @@ spec:
         - --health-probe-bind-address=:8081
         command:
         - /manager
-        image: vm-234-63.vmware.gsslab.pnq2.redhat.com:8443/bshaw7/k8s-ec2-operator:v1
+        image: docker.io/shawbikash521/k8s-ec2-operator:v1
         livenessProbe:
           httpGet:
             path: /healthz
