@@ -1,4 +1,4 @@
-```markdown
+
 # Kubernetes EC2 Operator
 
 An OpenShift/Kubernetes Operator that manages AWS EC2 instances using Kubernetes Custom Resources. This allows you to provision and manage AWS infrastructure natively using standard YAML files.
@@ -8,14 +8,14 @@ An OpenShift/Kubernetes Operator that manages AWS EC2 instances using Kubernetes
 Before deploying this operator, ensure you have the following:
 
 
-1.  ***OpenShift / Kubernetes Cluster: Access to a running cluster.***
-2.  ***CLI Tools*** `oc` or `kubectl` installed and logged in.
-3.  ***AWS Account*** An IAM User with `AmazonEC2FullAccess` permissions.
-    ***You will need the **Access Key ID***
-    ***You will need the ***Secret Access Key***
-4.  ***Network Access*** Your cluster nodes must be able to pull images from the internal registry:
-    ****`vm-234-63.vmware.gsslab.pnq2.redhat.com:8443`
-    ***(Note: If deploying to a cluster outside this network, push the image to a public registry like Docker Hub or Quay.io first).***
+1.  OpenShift / Kubernetes Cluster: Access to a running cluster.
+2.  CLI Tools `oc` or `kubectl` installed and logged in.
+3.  AWS Account An IAM User with `AmazonEC2FullAccess` permissions.
+    You will need the **Access Key ID
+    You will need the Secret Access Key
+4.  Network Access Your cluster nodes must be able to pull images from the internal registry:
+    `vm-234-63.vmware.gsslab.pnq2.redhat.com:8443`
+    (Note: If deploying to a cluster outside this network, push the image to a public registry like Docker Hub or Quay.io first).
 
 
 
@@ -26,7 +26,7 @@ Follow these steps to deploy the operator to any OpenShift cluster.
 ### Step 1: Clone the Repository
 Get the manifests and configuration files to your local machine (or bastion host).
 
-```
+
 
 ```bash
 git clone [https://github.com/bshaw7/k8s-ec2-operator.git](https://github.com/bshaw7/k8s-ec2-operator.git)
