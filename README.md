@@ -1,7 +1,3 @@
-This is the **full, complete** version of the `README.md`. It covers everything from cloning the code to deploying, configuring secrets, creating an instance, and cleaning up.
-
-You can copy the entire block below and paste it into your `README.md` file.
-
 ```markdown
 # Kubernetes EC2 Operator
 
@@ -32,7 +28,6 @@ Get the manifests and configuration files to your local machine (or bastion host
 ```bash
 git clone [https://github.com/bshaw7/k8s-ec2-operator.git](https://github.com/bshaw7/k8s-ec2-operator.git)
 cd k8s-ec2-operator
-
 ```
 
 ### Step 2: Deploy the Operator
