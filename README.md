@@ -25,9 +25,12 @@ Follow these steps to deploy the operator to any OpenShift cluster.
 ### Step 1: Clone the Repository
 Get the manifests and configuration files to your local machine (or bastion host).
 
+```
+
 ```bash
 git clone [https://github.com/bshaw7/k8s-ec2-operator.git](https://github.com/bshaw7/k8s-ec2-operator.git)
 cd k8s-ec2-operator
+
 ```
 
 ### Step 2: Deploy the Operator
